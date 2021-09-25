@@ -24,7 +24,3 @@ export const Single = (args) => <DriverBar driver={leaderboard[4]} {...args} />;
   (Single.args = {
     driver: "VER",
   });
-
-export const Group = (args) => {
-  return leaderboard.map((driver) => <DriverBar driver={driver} {...args} />);
-};

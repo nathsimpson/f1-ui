@@ -25,7 +25,7 @@ export const DriverBar = ({
   size = "sm",
   ...props
 }) => {
-  const { colors, spacing } = useTheme();
+  const { colors, spacing, fonts } = useTheme();
 
   const lengths = {
     symbol: driver.symbol,
@@ -41,15 +41,13 @@ export const DriverBar = ({
   return (
     <div
       css={{
-        backgroundColor: colors.background.primary,
         color: colors.text.primary,
-        padding: spacing.xxxs,
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
         textTransform: "uppercase",
         gap: spacing.xxs,
-        fontFamily: "Formula1-Display-Bold",
+        fontFamily: fonts.bold,
         fontSize: fontsizes[size],
       }}
     >

@@ -7,8 +7,8 @@ export const theme = {
     brand: "#e10600",
     border: "#000",
     background: {
-      primary: hexAlpha("#000", 0.6),
-      secondary: hexAlpha("#000", 0.6),
+      primary: hexAlpha("#000", 0.9),
+      secondary: hexAlpha("#333", 0.6),
       position: "#fff",
       positionInactive: "#eee",
     },
@@ -28,6 +28,7 @@ export const theme = {
     haas: "#fafafa",
   },
   spacing: {
+    xxxxs: 2,
     xxxs: 4,
     xxs: 8,
     xs: 12,
@@ -38,6 +39,11 @@ export const theme = {
   sizes: {
     sm: 24,
     md: 32,
+  },
+  fonts: {
+    default: "Formula1-Display-Regular",
+    bold: "Formula1-Display-Bold",
+    wide: "Formula1-Display-wide",
   },
   radii: {
     sm: 4,
