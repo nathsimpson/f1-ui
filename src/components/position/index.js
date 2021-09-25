@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
-import { jsx, useTheme } from '@emotion/react';
-import PropTypes from 'prop-types';
+import { jsx, useTheme } from "@emotion/react";
+import PropTypes from "prop-types";
 
-export const Position = ({size = 'sm', label, ...props}) => {
-  const {colors, spacing, radii, sizes} = useTheme()
+export const Position = ({ size = "sm", label, ...props }) => {
+  const { colors, spacing, radii, sizes } = useTheme();
 
   return (
     <div
@@ -15,23 +15,23 @@ export const Position = ({size = 'sm', label, ...props}) => {
         height: sizes[size],
         width: sizes[size],
         borderBottomRightRadius: radii[size],
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       {label}
     </div>
-  )
+  );
 };
 
 Position.propTypes = {
   /**
    * How large should the position component be?
    */
-    size: PropTypes.oneOf(['sm', 'md']),
+  size: PropTypes.oneOf(["sm", "md"]),
   /**
    * Button contents
    */
-   label: PropTypes.string.isRequired,
-}
+  label: PropTypes.string.isRequired,
+};

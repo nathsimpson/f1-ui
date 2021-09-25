@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import { jsx, useTheme } from '@emotion/react';
+import { jsx, useTheme } from "@emotion/react";
 
-export const Callout = props => {
-  const {colors, spacing, radii} = useTheme()
+export const Callout = (props) => {
+  const { colors, spacing, radii } = useTheme();
 
   return (
     <div
@@ -12,9 +12,9 @@ export const Callout = props => {
         borderTop: `2px solid ${colors.brand}`,
         padding: spacing.xxs,
         fontFamily: "Formula1-Display-Wide",
-        borderBottomRightRadius: radii.md
+        borderBottomRightRadius: radii.md,
       }}
       {...props}
     />
-  )
-}
+  );
+};

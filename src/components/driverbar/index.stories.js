@@ -1,32 +1,30 @@
-import React from 'react';
+import React from "react";
 
-import { DriverBar } from './index';
-import { leaderboard } from '../../data';
+import { DriverBar } from "./index";
+import { leaderboard } from "../../data";
 
 export default {
   component: DriverBar,
-  title: 'Components/DriverBar',
-}
+  title: "Components/DriverBar",
+};
 
 export const Single = (args) => <DriverBar driver={leaderboard[4]} {...args} />;
 
-Single.argTypes = {
+(Single.argTypes = {
   driver: {
-    control: 'select',
-    options: ['VER','HAM', 'BOT'],
+    control: "select",
+    options: ["VER", "HAM", "BOT"],
     mapping: {
       VER: leaderboard[0],
       HAM: leaderboard[1],
       BOT: leaderboard[2],
-    }
-  }
-},
-
-Single.args = {
-  driver: 'VER',
-}
-
+    },
+  },
+}),
+  (Single.args = {
+    driver: "VER",
+  });
 
 export const Group = (args) => {
-  return leaderboard.map(driver => <DriverBar driver={driver} {...args} />)
-}
+  return leaderboard.map((driver) => <DriverBar driver={driver} {...args} />);
+};

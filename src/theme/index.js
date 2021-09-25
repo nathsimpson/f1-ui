@@ -1,20 +1,20 @@
 /** @jsxImportSource @emotion/react */
-import { jsx, ThemeProvider, useTheme } from '@emotion/react'
-import hexAlpha from 'hex-alpha'
+import { jsx, ThemeProvider, useTheme } from "@emotion/react";
+import hexAlpha from "hex-alpha";
 
 export const theme = {
   colors: {
     brand: "#e10600",
     border: "#000",
     background: {
-      primary: hexAlpha('#000', 0.6),
-      secondary: hexAlpha('#000', 0.6),
+      primary: hexAlpha("#000", 0.6),
+      secondary: hexAlpha("#000", 0.6),
       position: "#fff",
-      positionInactive: '#eee',
+      positionInactive: "#eee",
     },
     text: {
       primary: "#fff",
-      inverted: '#000',
+      inverted: "#000",
     },
     mercedes: "#00d2be",
     redbull: "#0600ef",
@@ -33,14 +33,14 @@ export const theme = {
     xs: 12,
     sm: 16,
     md: 24,
-    lg: 32
+    lg: 32,
   },
   sizes: {
     sm: 24,
-    md: 32
+    md: 32,
   },
   radii: {
     sm: 4,
-    md: 8
+    md: 8,
   },
-}
+};
