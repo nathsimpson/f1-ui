@@ -26,6 +26,11 @@ export const theme = {
     alpine: "#0090ff",
     williams: "#005aff",
     haas: "#fafafa",
+    flags: {
+      red: "#e10600",
+      yellow: "#f4d40a",
+      green: "#45d805",
+    },
   },
   spacing: {
     xxxxs: 2,
