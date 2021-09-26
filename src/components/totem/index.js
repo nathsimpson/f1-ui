@@ -5,7 +5,7 @@ import { DriverBar } from "../driverbar";
 
 const totemWidth = 120;
 
-export const TotemPole = ({ drivers, lap = 12 }) => {
+export const TotemPole = ({ drivers, showGapToLead, lap = 12 }) => {
   const { colors, spacing } = useTheme();
   return (
     <div css={{}}>
@@ -18,7 +18,7 @@ export const TotemPole = ({ drivers, lap = 12 }) => {
         }}
       >
         {drivers.map((driver) => (
-          <TotemRow driver={driver} />
+          <TotemRow driver={driver} showGapToLead={showGapToLead} />
         ))}
       </div>
     </div>
@@ -27,16 +27,13 @@ export const TotemPole = ({ drivers, lap = 12 }) => {
 
 TotemPole.propTypes = {
   lap: PropTypes.number,
+  showGapToLead: PropTypes.bool,
 };
 
-export const TotemRow = ({ driver }) => {
+export const TotemRow = ({ driver, showGapToLead }) => {
   const { colors, spacing, fonts, radii } = useTheme();
   return (
-    <div
-      css={{
-        display: "flex",
-      }}
-    >
+    <div css={{ display: "flex" }}>
       <div
         css={{
           width: totemWidth,
@@ -48,21 +45,31 @@ export const TotemRow = ({ driver }) => {
       >
         <DriverBar driver={driver} />
       </div>
-      <div
-        css={{
-          width: 100,
-          backgroundColor: colors.background.secondary,
-          fontFamily: fonts.default,
-          color: colors.text.primary,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          padding: spacing.xxxs,
-          borderTopRightRadius: driver.position == 1 ? radii.md : 0,
-        }}
-      >
-        {driver.position === 1 ? "Leader" : driver.gapLead}
-      </div>
+
+      {showGapToLead && (
+        <GapToLead value={driver.gapLead} position={driver.position} />
+      )}
+    </div>
+  );
+};
+
+export const GapToLead = ({ value = "+0", position }) => {
+  const { colors, spacing, fonts, radii } = useTheme();
+  return (
+    <div
+      css={{
+        width: 100,
+        backgroundColor: colors.background.secondary,
+        fontFamily: fonts.default,
+        color: colors.text.primary,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "flex-end",
+        padding: spacing.xxxs,
+        borderTopRightRadius: position == 1 ? radii.md : 0,
+      }}
+    >
+      {position === 1 ? "Leader" : value}
     </div>
   );
 };
